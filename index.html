@@ -1,254 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 
-      Chosen Palette: Professional Dark Mode
-      Application Structure Plan: The SPA is structured as a single-page, top-to-bottom responsive portfolio. The information architecture follows the logical flow a recruiter or client would expect: 1. Hero (Who you are), 2. Summary (Your value proposition), 3. Skills (What you do), 4. Experience (Where you've done it), 5. Education (Your foundation). This vertical scroll structure is the most intuitive for a text-based report like a CV, prioritizing scannability and quick access to key information.
-      Visualization & Content Choices: 
-      - Report Info: Technical Skills (e.g., After Effects, Blender, Lottie) -> Goal: Inform/Organize -> Viz/Presentation: HTML/Tailwind "Pills" (styled spans) grouped by category -> Interaction: None (static display) -> Justification: Pills are the most scannable, modern UI for presenting a list of technical competencies. -> Library/Method: HTML/Tailwind.
-      - Report Info: Soft Skills (e.g., Leadership, Project Management) -> Goal: Inform -> Viz/Presentation: Styled HTML bulleted list -> Interaction: None (static display) -> Justification: A simple list is best for these descriptive, non-technical skills. -> Library/Method: HTML/Tailwind.
-      - Report Info: Work Experience (e.g., PicsArt, Deep Agency) -> Goal: Inform/Organize (Chronology) -> Viz/Presentation: HTML/Tailwind "Cards" in a reverse-chronological vertical stack. -> Interaction: None (static display) -> Justification: The card layout cleanly separates each job role, making the career timeline easy to follow and read. -> Library/Method: HTML/Tailwind.
-      - Report Info: Contact Details (Phone, Email) -> Goal: Action -> Viz/Presentation: Clickable links with icons in the header. -> Interaction: Click (mailto:, tel:) -> Justification: Places actionable contact info in the most accessible location. -> Library/Method: HTML/Tailwind/Font Awesome.
-      CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
-    <title>David Khalatyan | Senior Motion Graphic Artist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJg1c7Vq7fVv4lB3t5z/6y2UqH2Q6T20N/5dE5v0lB1v2q5h2Z5v6s+7z5e7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1f2937; /* Tailwind gray-800 */
-            color: #e5e7eb; /* Tailwind gray-200 */
-        }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 50px;
-            background-color: #6366f1; /* Tailwind indigo-500 */
-            border-radius: 9999px;
-        }
-        .card {
-            background-color: #374151; /* Tailwind gray-700 */
-            border: 1px solid #4b5563; /* Tailwind gray-600 */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        .pill {
-            background-color: #4b5563; /* Tailwind gray-600 */
-            color: #d1d5db; /* Tailwind gray-300 */
-            font-weight: 500;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Khalatyan - Senior Motion Graphic Artist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f3f3;
+      color: #222;
+      line-height: 1.6;
+    }
+    .header {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .job {
+      margin-bottom: 20px;
+    }
+    .job-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
-<body class="antialiased">
+<body>
+  <div class="header">
+    <h1>David Khalatyan</h1>
+    <p>Senior Motion Graphic Artist (10+ Years Experience)</p>
+    <p class="contact">
+      Yerevan, Armenia | +374 98 262 601 | 
+      <a href="mailto:davidkhalatyan996@gmail.com">davidkhalatyan996@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/david-khalatyan-464484162/" target="_blank">LinkedIn</a>
+    </p>
+  </div>
 
-    <!-- Header & Hero Section -->
-    <header class="bg-gray-900 shadow-xl border-b border-indigo-500/30">
-        <div class="max-w-7xl mx-auto py-12 px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                    <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
-                        DAVID KHALATYAN
-                    </h1>
-                    <p class="mt-2 text-2xl text-indigo-300 font-medium">
-                        Senior Motion Graphic Artist
-                        <span class="text-lg text-gray-400 font-light ml-3">(10+ Years Experience)</span>
-                    </p>
-                </div>
-                <div class="mt-6 lg:mt-0 flex flex-col sm:flex-row sm:flex-wrap gap-4 text-lg">
-                    <a href="mailto:davidkhalatyan996@gmail.com" class="text-gray-300 hover:text-indigo-400 transition flex items-center">
-                        <i class="fas fa-envelope mr-2 text-indigo-400"></i> davidkhalatyan996@gmail.com
-                    </a>
-                    <a href="tel:+37498262601" class="text-gray-300 hover:text-indigo-400 transition flex items-center">
-                        <i class="fas fa-phone mr-2 text-indigo-400"></i> +374 98 262 601
-                    </a>
-                    <a href="#" class="text-gray-300 hover:text-indigo-400 transition flex items-center" target="_blank">
-                        <i class="fab fa-linkedin mr-2 text-indigo-400"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+  <div class="container">
 
-    <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto py-16 px-6 lg:px-8">
+    <div class="section">
+      <h2>SUMMARY</h2>
+      <p>Motion Graphic Artist with over 10 years of experience in the sphere.</p>
+      <p>I specialize in 2D/3D animation, SVG/JSON animation, 3D modeling for animation, and advanced compositing.</p>
+      <p>I create diverse animation assets for Social Media, PUA (Performance/User Acquisition), Promotional videos, complex graphics for Events or Presentations, Explainer animations, SaaS animation, and Lottie assets for WEB, iOS, and Android.</p>
+      <p>My 3D expertise covers social media assets and Web Thumbnails, utilizing skills in 3D modeling, texturing, lighting, and rendering.</p>
+      <p>I maintain continuous professional development, constantly researching techniques to ensure the highest quality deliverables and achieve top-tier results in every project. I possess exceptional time management skills, effectively balancing my primary role with external community commitments. This discipline allows me to professionally handle concurrent workloads, ensuring high-level quality across all projects while consistently preventing burnout.</p>
+      <p>I prioritize working closely with other specialists for seamless collaboration and proactively manage client communication, ensuring the team is well-informed and positioned for success.</p>
+    </div>
 
-        <!-- Summary Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-indigo-400">SUMMARY & EXPERTISE</h2>
-            <div class="text-lg text-gray-300 leading-relaxed space-y-4">
-                 <p>
-                    Motion Graphic Artist with over 10 years of experience in the sphere. I specialize in **2D/3D animation, SVG/JSON animation, 3D modeling for animation, and advanced compositing.**
-                </p>
-                <p>
-                    I create diverse animation assets for Social Media, PUA (Performance/User Acquisition), Promotional videos, complex graphics for Events or Presentations, Explainer animations, SaaS animation, and Lottie assets for WEB, iOS, and Android. My 3D expertise covers social media assets and Web Thumbnails, utilizing skills in 3D modeling, texturing, lighting, and rendering.
-                </p>
-                <p>
-                    I maintain continuous professional development, constantly researching techniques to ensure the highest quality deliverables and achieve top-tier results in every project. I possess exceptional time management skills, effectively balancing my primary role with external community commitments. This discipline allows me to professionally handle concurrent workloads, ensuring high-level quality across all projects while consistently preventing burnout.
-                </p>
-                 <p>
-                    I prioritize working closely with other specialists for seamless collaboration and proactively manage client communication, ensuring the team is well-informed and positioned for success.
-                </p>
-            </div>
-        </section>
+    <div class="section">
+      <h2>EXPERIENCE</h2>
 
-        <!-- Technical and Soft Skills Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-indigo-400">SKILLS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                
-                <!-- Technical Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-100 mb-4">Technical Proficiency <i class="fas fa-desktop text-indigo-400 ml-2"></i></h3>
-                    <div class="space-y-5">
-                        <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 shadow-md">
-                            <p class="font-semibold text-indigo-200">Motion Design & Compositing</p>
-                            <div class="mt-2 flex flex-wrap gap-2">
-                                <span class="pill px-3 py-1 rounded-full text-sm">Adobe After Effects</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">Adobe Premiere Pro</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">DaVinci Resolve</span>
-                            </div>
-                        </div>
-                        <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 shadow-md">
-                            <p class="font-semibold text-indigo-200">3D Modeling & Animation</p>
-                            <div class="mt-2 flex flex-wrap gap-2">
-                                <span class="pill px-3 py-1 rounded-full text-sm">Cinema 4D (Sketch & Toon)</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">Blender</span>
-                            </div>
-                        </div>
-                        <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 shadow-md">
-                            <p class="font-semibold text-indigo-200">Graphic Design, UI & Web</p>
-                            <div class="mt-2 flex flex-wrap gap-2">
-                                <span class="pill px-3 py-1 rounded-full text-sm">Lottie (Web Animation)</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">Figma</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">Adobe Photoshop</span>
-                                <span class="pill px-3 py-1 rounded-full text-sm">Adobe Illustrator</span>
-                            </div>
-                        </div>
-                         <div class="bg-gray-700/50 p-4 rounded-xl border border-gray-600 shadow-md">
-                            <p class="font-semibold text-indigo-200">Audio</p>
-                            <div class="mt-2 flex flex-wrap gap-2">
-                                <span class="pill px-3 py-1 rounded-full text-sm">Adobe Audition</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="job">
+        <div class="job-title">Motion Graphic Artist — PicsArt Inc. | Yerevan, Armenia | October 2019 – Present</div>
+        <ul>
+          <li>Spearheaded the creation of high-impact motion graphics and 3D assets for global marketing campaigns, contributing to increased user acquisition and engagement.</li>
+          <li>Optimized web animation workflows by implementing Lottie animations for icons and banners, enhancing site performance and UI interactivity.</li>
+          <li>Executed comprehensive video post-production, including color grading and sound design.</li>
+          <li>Collaborated closely with Product and Marketing teams.</li>
+        </ul>
+      </div>
 
-                <!-- Soft Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-100 mb-4">Soft Skills <i class="fas fa-users text-indigo-400 ml-2"></i></h3>
-                    <ul class="list-disc ml-6 text-lg space-y-3 text-gray-300">
-                        <li>**Leadership & Mentorship:** Experienced in guiding junior designers, conducting code/design reviews, and fostering team growth.</li>
-                        <li>**Project Management:** Proven ability to manage multiple deadlines, prioritize tasks.</li>
-                        <li>**Communication & Collaboration:** Strong communication skills, essential for cross-functional collaboration with Marketing and Product teams.</li>
-                        <li>**Adaptability & Problem Solving:** Committed to continuous learning and adept at troubleshooting complex technical issues during production.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <div class="job">
+        <div class="job-title">Motion Graphic Designer — Deep Agency | Yerevan, Armenia | December 2018 – August 2019</div>
+        <ul>
+          <li>Managed end-to-end production of 2D animations and commercial video content.</li>
+          <li>Managed camera operation and sophisticated lighting setups for advertising shoots.</li>
+          <li>Expanded agency service offerings by delivering comprehensive visual packages including animated icons, banners, and promotional videos.</li>
+        </ul>
+      </div>
 
-        <!-- Experience Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-indigo-400">PROFESSIONAL EXPERIENCE</h2>
-            <div class="space-y-8">
-                
-                <!-- Experience 1: PicsArt Inc. (Current) -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-semibold text-gray-100">Motion Graphic Artist</h3>
-                    <p class="text-indigo-300 font-medium text-lg">PicsArt Inc. | Yerevan, Armenia</p>
-                    <p class="text-sm text-gray-400 mt-1">October 2019 - Present</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-300 space-y-2">
-                        <li>Spearheaded the creation of high-impact motion graphics and 3D assets for global marketing campaigns, contributing to increased user acquisition and engagement.</li>
-                        <li>Optimized web animation workflows by implementing **Lottie animations** for icons and banners, significantly enhancing site performance and UI interactivity.</li>
-                        <li>Executed comprehensive video post-production, including color grading and sound design, while collaborating closely with Product and Marketing teams.</li>
-                    </ul>
-                </div>
+      <div class="job">
+        <div class="job-title">Motion Designer — GAT Cutting | Yerevan, Armenia | August 2018 – December 2018</div>
+        <ul>
+          <li>Executed time-sensitive motion graphic projects for commercial use.</li>
+          <li>Collaborated with the creative director to translate static concepts into dynamic video formats.</li>
+        </ul>
+      </div>
 
-                <!-- Experience 2: Freelance (Current) -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-semibold text-gray-100">Freelance Motion Designer & 3D Artist</h3>
-                    <p class="text-indigo-300 font-medium text-lg">Self-Employed (ACBA Bank, Upwork) | Remote/Yerevan</p>
-                    <p class="text-sm text-gray-400 mt-1">Present</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-300 space-y-2">
-                        <li>**ACBA Bank:** Produced high-quality 3D art and motion design assets for financial marketing campaigns and banking promotional materials.</li>
-                        <li>**Upwork:** Delivered high-quality motion design and video editing services for international and local clients, specializing in SVG/Lottie web animations, 3D motion graphics, and Visual Effects (VFX).</li>
-                        <li>Specialized in 2D character animation, explainer videos, and logo reveals using After Effects.</li>
-                        <li>Built a foundational portfolio in visual storytelling, managing client communication and project timelines independently.</li>
-                    </ul>
-                </div>
+      <div class="job">
+        <div class="job-title">Freelance Motion Designer — Self-Employed | Remote / Yerevan — Present</div>
+        <ul>
+          <li>ACBA Bank (Motion Designer & 3D Artist): Produced high-quality 3D art and motion design assets for financial marketing campaigns and banking promotional materials.</li>
+          <li>Upwork (Motion Designer & 3D Animator): Delivered diverse projects for international clients, specializing in SVG/Lottie web animations, 3D motion graphics, and Visual Effects (VFX).</li>
+          <li>Delivered high-quality motion design and video editing services for international and local clients.</li>
+          <li>Specialized in 2D character animation, explainer videos, and logo reveals using After Effects.</li>
+          <li>Built a foundational portfolio in visual storytelling, managing client communication and project timelines independently.</li>
+        </ul>
+      </div>
 
-                <!-- Experience 3: Deep Agency -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-gray-500">
-                    <h3 class="text-2xl font-semibold text-gray-100">Motion Graphic Designer</h3>
-                    <p class="text-indigo-300 font-medium text-lg">Deep Agency | Yerevan, Armenia</p>
-                    <p class="text-sm text-gray-400 mt-1">December 2018 - August 2019</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-300 space-y-2">
-                        <li>Managed end-to-end production of 2D animation and commercial video content.</li>
-                        <li>Managed camera operation and sophisticated lighting setups for advertising shoots.</li>
-                        <li>Delivered comprehensive visual packages including animated icons, banners, and promotional videos, expanding agency service offerings.</li>
-                    </ul>
-                </div>
+    </div>
 
-                <!-- Experience 4: GAT Cutting -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-gray-500">
-                    <h3 class="text-2xl font-semibold text-gray-100">Motion Designer</h3>
-                    <p class="text-indigo-300 font-medium text-lg">GAT Cutting | Yerevan, Armenia</p>
-                    <p class="text-sm text-gray-400 mt-1">August 2018 - December 2018</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-300 space-y-2">
-                        <li>Executed time-sensitive motion graphic projects for commercial use.</li>
-                        <li>Collaborated with the creative director to translate static concepts into dynamic video formats.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="section">
+      <h2>TECHNICAL SKILLS</h2>
+      <ul>
+        <li>Motion Design & Compositing: Adobe After Effects, Adobe Premiere Pro, DaVinci Resolve</li>
+        <li>3D Modeling & Animation: Cinema 4D (Sketch & Toon), Blender</li>
+        <li>Graphic Design & UI: Adobe Photoshop, Adobe Illustrator, Figma</li>
+        <li>Web & Audio: Lottie (Web Animation), Adobe Audition</li>
+      </ul>
+    </div>
 
-        <!-- Education & Certification Section -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold section-title text-indigo-400">EDUCATION & CERTIFICATIONS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Education -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <h3 class="text-xl font-semibold text-gray-100">Bachelor's Degree in Animation, Interactive Technology, Video Graphics</h3>
-                    <p class="text-indigo-300 mt-1">National Polytechnic University of Armenia (NPUA), Yerevan</p>
-                    <p class="text-sm text-gray-400">2013 - 2019</p>
-                </div>
+    <div class="section">
+      <h2>SOFT SKILLS</h2>
+      <ul>
+        <li>Leadership & Mentorship: Experienced in guiding junior designers, conducting code/design reviews, and fostering team growth.</li>
+        <li>Project Management: Proven ability to manage multiple deadlines, prioritize tasks.</li>
+        <li>Communication & Collaboration: Strong communication skills, essential for cross-functional collaboration with Marketing and Product teams.</li>
+        <li>Adaptability & Problem Solving: Committed to continuous learning and adept at troubleshooting complex technical issues during production.</li>
+      </ul>
+    </div>
 
-                <!-- Certifications -->
-                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-gray-500">
-                    <h3 class="text-xl font-semibold text-gray-100">Key Courses & Certifications</h3>
-                    <ul class="list-disc ml-5 mt-2 space-y-2 text-gray-300">
-                        <li>Creating Motion Graphics with Sketch and Toon in Cinema 4D (Provider: Edward Hassenfratz, April 2020)</li>
-                        <li>2D Animation: Animal Walk Cycles (Provider: Dermot O'Connor, January 2020)</li>
-                    </ul>
-                </div>
+    <div class="section">
+      <h2>EDUCATION</h2>
+      <p>Bachelor's Degree in Animation & Video Graphics – National Polytechnic University of Armenia (2013–2019)</p>
+    </div>
 
-            </div>
-        </section>
+    <div class="section">
+      <h2>CERTIFICATIONS & COURSES</h2>
+      <ul>
+        <li>Creating Motion Graphics with Sketch and Toon in Cinema 4D (Provider: Edward Hassenfratz, April 2020)</li>
+        <li>2D Animation: Animal Walk Cycles (Provider: Dermot O'Connor, January 2020)</li>
+      </ul>
+    </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 mt-12 border-t border-indigo-500/30">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 David Khalatyan. All rights reserved.</p>
-            <p class="mt-1">Yerevan, Armenia</p>
-        </div>
-    </footer>
-
+  </div>
 </body>
 </html>
